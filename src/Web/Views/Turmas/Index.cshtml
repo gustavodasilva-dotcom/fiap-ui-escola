@@ -1,0 +1,41 @@
+﻿@using Fiap.UI.Escola.Web.Entities
+@model Turma[]
+
+@{
+    ViewBag.Title = "Turmas";
+}
+
+<a asp-controller="Turmas" asp-action="Details" class="btn btn-primary">
+    <i class="bi bi-plus-square"></i>
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Turma</th>
+            <th scope="col">Ano</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Turma turma in Model)
+        {
+            <tr>
+                <th>
+                    <a href="/Turmas/Details/@turma.id" class="btn btn-primary">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="/Turmas/Deletar/@turma.id" class="btn btn-danger">
+                        <i class="bi bi bi-trash"></i>
+                    </a>
+                </th>
+                <th scope="row">@turma.id</th>
+                <td>@turma.cursoId</td>
+                <td>@turma.turma</td>
+                <td>@turma.ano</td>
+            </tr>
+        }
+    </tbody>
+</table>

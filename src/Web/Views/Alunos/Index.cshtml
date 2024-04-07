@@ -1,0 +1,39 @@
+﻿@using Fiap.UI.Escola.Web.Entities
+@model Aluno[]
+
+@{
+    ViewBag.Title = "Alunos";
+}
+
+<a asp-controller="Alunos" asp-action="Details" class="btn btn-primary">
+    <i class="bi bi-plus-square"></i>
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Usuário</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Aluno aluno in Model)
+        {
+            <tr>
+                <th>
+                    <a href="/Alunos/Details/@aluno.id" class="btn btn-primary">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                    <a href="/Alunos/Deletar/@aluno.id" class="btn btn-danger">
+                        <i class="bi bi bi-trash"></i>
+                    </a>
+                </th>
+                <th scope="row">@aluno.id</th>
+                <td>@aluno.nome</td>
+                <td>@aluno.usuario</td>
+            </tr>
+        }
+    </tbody>
+</table>

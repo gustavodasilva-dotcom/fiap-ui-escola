@@ -41,7 +41,7 @@ namespace Fiap.UI.Escola.Web.Controllers
             {
                 var turma = new Turma()
                 {
-                    cursoId = int.Parse(collection["curso_id"]!),
+                    cursoId = int.Parse(collection["cursoId"]!),
                     turma = collection["turma"]!,
                     ano = int.Parse(collection["ano"]!)
                 };
